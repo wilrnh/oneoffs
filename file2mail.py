@@ -29,8 +29,7 @@ FP = open(args.file, 'rb')
 MSG = MIMEText(FP.read())
 FP.close()
 
-MSG['Subject']
-parent = '%s: %s at %s' % (socket.gethostname(), args.file, time.asctime())
+MSG['Subject'] = '%s: %s at %s' % (socket.gethostname(), args.file, time.asctime())
 MSG['From'] = args.smtp_user
 MSG['To'] = args.to
 print (args.smtp_password)
